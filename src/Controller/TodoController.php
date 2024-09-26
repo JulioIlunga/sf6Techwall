@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use function mysql_xdevapi\getSession;
 
 
-#[Route("/todo")] //pefixe permettant de faire un préfixe pour ne pas repeter /todo à chaque routes de notre controller.
+#[Route("/todo")] //pefixe permettant de faire un preceder toutes les routes du controller pqr "/todo" pour ne pas repeter /todo à chaque routes de notre controller.
 
 class TodoController extends AbstractController
 {
@@ -36,9 +36,9 @@ class TodoController extends AbstractController
     //============================================================================================
 
     #[Route(
-        '/add/{name}/{content}', 
+        '/add/{name?default name}/{content?default value}', 
         name: 'todo.add', 
-        defaults: ['content' => 'default value']
+        // defaults: ['content' => 'default value','name' => 'Default name']
         )]
     public function addTodo(Request $request, $name, $content)
     {
