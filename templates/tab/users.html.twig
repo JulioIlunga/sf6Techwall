@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-    <title>sayHello</title>
-</head>
-<body>
+{% extends 'template.html.twig' %}
+
+{% block Title %}
+    Users
+{% endblock %}
+{% block PageTitle %}
+    Users
+{% endblock %}
+{% block body %}
 <div>
     <table class="table">
         <tr class="table-active">
@@ -26,5 +26,4 @@
 
     </table>
 </div>
-</body>
-</html>
+{% endblock %}
