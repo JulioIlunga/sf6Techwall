@@ -12,17 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class FirstController extends AbstractController
 {
 
-    #[Route('{maVar}', name: 'test.order.route')]
-    public function testOrderRoute($maVar){
-        return new Response("
-
-        <html>
-            <body>
-            $maVar
-            </html>
-        </body>
-        ");
-    }
+    
     #[Route('/first', name: 'first')]
     public function index(): Response
     {
@@ -38,10 +28,13 @@ class FirstController extends AbstractController
     {
         return $this->render('first/hello.html.twig', [
             'nom' => $name,
-            'prenom' => $firstname
+            'prenom' => $firstname,
+            'path' => '        '
 
         ]);
     }
+
+    
 
 
     #[Route('times/{entier1}/{entier2}', name:'multiplication',
@@ -52,5 +45,19 @@ class FirstController extends AbstractController
 
         $result = $entier1 * $entier2;
         return new Response("<h1>$result</h1>");
-    }
+     }
+     
+    //  #[Route('{maVar}', name: 'test.order.route')]
+    // public function testOrderRoute($maVar){
+    //     return new Response("
+
+    //     <html>
+    //         <body>
+    //         $maVar
+    //         </html>
+    //     </body>
+    //     ");
+    // }
+
+
 }

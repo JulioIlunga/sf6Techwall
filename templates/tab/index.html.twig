@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
+
+</head>
+<body>
+<table>
+    {% for note in notes %}
+    <tr>
+        <td>{{note}}</td>
+    
+    </tr>
+    {% endfor %}
+
+
+</table>
+<div class="alert alert-info">
+    <p>Nombre de notes : {{notes | length}}</p>
+    <p>Nombre max : {{max(notes)}}</p>
+    <p>Nombre min : {{min(notes)}}</p>
+
+</div>
+</body>
+</html>
