@@ -30,13 +30,12 @@ class FirstController extends AbstractController
          ]);
     }
 
-    #[Route('/sayhello/{firstname}/{name}', name: 'say.hello')]
+    //#[Route('/sayhello/{firstname}/{name}', name: 'say.hello')]
     public function sayHello(\Symfony\Component\HttpFoundation\Request $request, $name, $firstname): Response
     {
         return $this->render('first/hello.html.twig', [
             'nom' => $name,
             'prenom' => $firstname,
-            'path' => '        '
 
         ]);
     }

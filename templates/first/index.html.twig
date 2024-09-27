@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ firstname }} {{ name }}</title>
-</head>
-<body>
-<div>
-    <h1>My name is {{ name }}</h1>
+{% extends 'template.html.twig' %}
+{% block title %}
+{{ firstname }} {{ name }}
+{% endblock %}
+
+{% block body%}
+
+    <h1>My name is {{ firstname }} {{ name }}</h1>
     <p>from first </p>
-    
-</div>
-</body>
-</html>
+    Je veux aller sur cet URL absolue : {{ url('first') }}
+{% endblock %}
